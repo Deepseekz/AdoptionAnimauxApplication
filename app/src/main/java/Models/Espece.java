@@ -1,6 +1,8 @@
 package Models;
 
-public class Espece {
+import java.io.Serializable;
+
+public class Espece implements Serializable {
     String _nom;
 
     public Espece(String _nom) {

@@ -16,8 +16,6 @@ import com.example.adoptionanimauxapplication.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private Button btnAdopter;
-    private Button btnAjouter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        setContentView(R.layout.activity_main);
 
         binding.btnCreer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         binding.btnAdopter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), DetailsAnimalActivity.class);
+                Intent i = new Intent(getApplicationContext(), AnimauxActivity.class);
                 startActivity(i);
             }
         });
