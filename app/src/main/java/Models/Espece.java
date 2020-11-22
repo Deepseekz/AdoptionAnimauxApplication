@@ -8,4 +8,10 @@ public class Espece implements Serializable {
     public Espece(String _nom) {
         this._nom = _nom;
     }
+
+    @Override
+    public String toString()
+    {
+        return _nom;
+    }
 }
