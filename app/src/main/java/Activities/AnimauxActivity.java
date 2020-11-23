@@ -40,7 +40,8 @@ public class AnimauxActivity extends AppCompatActivity {
         binding.recyclerViewAnimaux.addOnItemTouchListener(new RecyclerTouchListener(this, binding.recyclerViewAnimaux, new RecyclerViewClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Intent i = new Intent(getApplicationContext(), AnimauxActivity.class);
+                Intent i = new Intent(getApplicationContext(), DetailsAnimalActivity.class);
+                //i.putExtra(binding.recyclerViewAnimaux);
                 startActivity(i);
             }
         }));

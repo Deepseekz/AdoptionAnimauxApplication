@@ -1,119 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/blue"
         android:text="Fiche Animal"
-        android:layout_margin="10dp"
-        android:background="@color/teal_700"
-        android:textColor="@color/white"
-        android:textSize="35dp"
-        android:textAlignment="center">
-    </TextView>
-    <ImageView
-        android:id="@+id/imgAnimal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:textColor="#FFFFFF"
         android:textAlignment="center"
-        android:layout_weight="2">
-    </ImageView>
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1">
-        <TextView
+        android:layout_height="match_parent"
+        android:layout_weight="50"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgAnimal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Espèce : ">
-        </TextView>
-        <TextView
-            android:id="@+id/txtEspece"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </TextView>
+            android:layout_margin="30dp"
+            android:textAlignment="center">
+        </ImageView>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1">>
-        <TextView
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="15dp"
+        android:layout_weight="50"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Espèce : "
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/espece"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="..."
+                android:textSize="25dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Nom : "
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/nom"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="..."
+                android:textSize="25dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Age : "
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="..."
+                android:textSize="25dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nom : ">
-        </TextView>
-        <TextView
+            android:layout_marginBottom="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Statut : "
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/statut"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="..."
+                android:textSize="25dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </TextView>
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Modifier :"
+                android:textSize="25dp" />
+
+            <Spinner
+                android:id="@+id/spinnerDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+            </Spinner>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OK"
+                android:textSize="20dp"
+                android:layout_weight="1">
+            </Button>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SUPPRIMER LA FICHE"
+                android:textSize="20dp">
+            </Button>
+
+        </LinearLayout>
+
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1">>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Age : ">
-        </TextView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </TextView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1">>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Statut : ">
-        </TextView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </TextView>
-    </LinearLayout>
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Modifier Statut : ">
-        </TextView>
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </Spinner>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="ok">
-        </Button>
-    </LinearLayout>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Supprimer la fiche">
-    </Button>
 
 </LinearLayout>
