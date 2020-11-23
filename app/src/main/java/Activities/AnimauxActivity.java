@@ -1,5 +1,6 @@
 package Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -39,15 +40,10 @@ public class AnimauxActivity extends AppCompatActivity {
         binding.recyclerViewAnimaux.addOnItemTouchListener(new RecyclerTouchListener(this, binding.recyclerViewAnimaux, new RecyclerViewClickListener() {
             @Override
             public void onClick(View view, int position) {
-                //à faire
+                Intent i = new Intent(getApplicationContext(), AnimauxActivity.class);
+                startActivity(i);
             }
         }));
-
-        binding.recyclerViewAnimaux.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
 
     }
 
@@ -64,11 +60,6 @@ public class AnimauxActivity extends AppCompatActivity {
     private void initializeAnimaux(){
         refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
         refuge.AjouterAnimal(new Animal("Bob", new Espece("chien"), 3, "adopter", 5));
-        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
-        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
-        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
-        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
-        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
         refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
         refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
 
