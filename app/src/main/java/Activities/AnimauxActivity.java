@@ -10,13 +10,19 @@ import com.example.adoptionanimauxapplication.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 
+import Adapters.RecyclerViewAdapter;
+import Interfaces.RecyclerViewClickListener;
+import Listeners.RecyclerTouchListener;
 import Models.Animal;
+import Models.Espece;
 import Models.Refuge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 public class AnimauxActivity extends AppCompatActivity {
     private ActivityAnimauxBinding binding;
     private Refuge refuge;
+    private RecyclerViewAdapter adapterAnimaux;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,22 +30,48 @@ public class AnimauxActivity extends AppCompatActivity {
         binding = ActivityAnimauxBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        //initializeAnimaux();
 
+        refuge = new Refuge("test", "issou");
 
+        initializeAnimaux();
+        initializeUI();
+
+        binding.recyclerViewAnimaux.addOnItemTouchListener(new RecyclerTouchListener(this, binding.recyclerViewAnimaux, new RecyclerViewClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                //à faire
+            }
+        }));
+
+        binding.recyclerViewAnimaux.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
 
     }
-/*
-    private void initializeAnimaux(){
-        ArrayList<Animal> animaux = new ArrayList<>();
-        animaux.add(new Animal());
-        animaux.add(new Animal());
-        animaux.add(new Animal());
-        animaux.add(new Animal());
-        animaux.add(new Animal());
 
-        ArrayAdapter<Animal> drinkArrayAdapter = new ArrayAdapter<Animal>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, animaux);
-        drinkArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-    }*/
+    private void initializeUI() {
+        binding.recyclerViewAnimaux.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL,false );
+        binding.recyclerViewAnimaux.setLayoutManager(layoutManager);
+        binding.recyclerViewAnimaux.setFocusable(false);
+
+        adapterAnimaux = new RecyclerViewAdapter(refuge.get_animaux());
+        binding.recyclerViewAnimaux.setAdapter(adapterAnimaux);
+    }
+
+    private void initializeAnimaux(){
+        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
+        refuge.AjouterAnimal(new Animal("Bob", new Espece("chien"), 3, "adopter", 5));
+        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
+        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
+        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
+        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
+        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
+        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
+        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
+
+    }
 
 }
