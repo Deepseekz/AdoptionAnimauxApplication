@@ -34,8 +34,6 @@ public class CreateAnimauxActivity extends AppCompatActivity {
 
         especes.add(new Espece("Chien"));
         especes.add(new Espece("Chat"));
-        especes.add(new Espece("Hamster"));
-        especes.add(new Espece("Oiseau"));
 
         ArrayAdapter<Espece> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, especes);
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);

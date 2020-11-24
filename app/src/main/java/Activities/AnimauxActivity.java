@@ -59,10 +59,10 @@ public class AnimauxActivity extends AppCompatActivity {
     }
 
     private void initializeAnimaux(){
-        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
-        refuge.AjouterAnimal(new Animal("Bob", new Espece("chien"), 3, "adopter", 5));
-        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
-        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", 5));
+        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", "avatar_cat"));
+        refuge.AjouterAnimal(new Animal("Bob", new Espece("chien"), 3, "adopter", "avatar_cat"));
+        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", "avatar_cat"));
+        refuge.AjouterAnimal(new Animal("Billy", new Espece("chien"), 3, "adopter", "avatar_cat"));
 
     }
 

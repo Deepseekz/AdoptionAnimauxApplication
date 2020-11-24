@@ -1,5 +1,6 @@
 package Adapters;
 
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
+        //holder.imageViewAnimal.set;
+        holder.imageViewAnimal.setImageResource(itemsData[position].getImageUrl());
         holder.textViewNameAnimal.setText(dataModelList.get(position).get_nom());
         holder.textViewEspeceAnimal.setText(String.valueOf(dataModelList.get(position).get_espece()));
         holder.textViewStatusAnimal.setText(String.valueOf(dataModelList.get(position).get_status()));
@@ -54,7 +57,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageViewAnimal = itemView.findViewById(R.id.imgAnimal);
+            imageViewAnimal = itemView.findViewById(R.id.imageView);
             textViewNameAnimal = itemView.findViewById(R.id.txtNom);
             textViewEspeceAnimal = itemView.findViewById(R.id.txtEspece);
             textViewStatusAnimal = itemView.findViewById(R.id.txtStatus);
